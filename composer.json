@@ -1,12 +1,17 @@
  {
-	"name": "lms-laravel/course",
-	"description": "",
+   	"name": "lms-laravel/course",
+   	"type": "asgard-module",
+   	"description": "Module Course for LMS Laravel",
+    	"license": "MIT",
 	"authors": [
 		{
 			"name": "Angel Kurten",
 			"email": "angelkurten@gmail.com"
 		}
 	],
+     	"require": {
+        	"composer/installers": "~1.0"
+     	},
 	"autoload": {
 		"psr-4": {
 			"Modules\\Course\\": ""
