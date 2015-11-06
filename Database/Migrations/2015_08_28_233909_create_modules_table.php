@@ -19,7 +19,7 @@ class CreateModulesTable extends Migration {
             $table->string('name');
             $table->string('description');
             $table->integer('course_id')->unsigned();
-
+            $table->string('slug')->unique();
             $table->foreign('course_id')->references('id')->on('courses');
 
             $table->timestamps();

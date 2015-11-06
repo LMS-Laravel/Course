@@ -24,6 +24,7 @@ class CreateLessonsTable extends Migration {
             $table->boolean('type')->default(1); //type lessons 1 is video, 0 is letter
             $table->integer('module_id')->unsigned();
             $table->integer('teacher_id')->unsigned();;
+            $table->string('slug')->unique();
 
             //foreign key
             $table->foreign('module_id')->references('id')->on('modules');

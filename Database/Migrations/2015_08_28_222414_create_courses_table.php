@@ -21,7 +21,7 @@ class CreateCoursesTable extends Migration {
             $table->enum('level', [1, 2, 3]);
             $table->boolean('type')->default(0);
             $table->integer('teacher_id')->unsigned();
-
+            $table->string('slug')->unique();
             //foreign keys
             $table->foreign('teacher_id')->references('id')->on('users');
 

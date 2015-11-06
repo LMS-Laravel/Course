@@ -2,10 +2,20 @@
    
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\User;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Lesson extends Model {
+
+class Lesson extends Model implements SluggableInterface{
+
+    use SluggableTrait;
 
     protected $fillable = [];
+
+    protected $sluggable = [
+        'build_from' => 'title',
+        'save_to'    => 'slug',
+    ];
 
     public function module()
     {
