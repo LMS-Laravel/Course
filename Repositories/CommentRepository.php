@@ -1,7 +1,6 @@
 <?php namespace Modules\Course\Repositories;
 
-
-use Prettus\Repository\Eloquent\BaseRepository;
+use App\BaseRepository;
 use Modules\Course\Entities\Comment;
 
 class CommentRepository extends BaseRepository

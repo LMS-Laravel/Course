@@ -1,8 +1,7 @@
 <?php namespace Modules\Course\Repositories;
 
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Modules\Course\Entities\Lesson;
+use App\BaseRepository;
 
 class LessonRepository extends BaseRepository
 {
