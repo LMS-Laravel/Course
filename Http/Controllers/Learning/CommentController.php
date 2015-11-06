@@ -21,7 +21,7 @@ class CommentController extends Controller {
         $lesson = $request->only(['lesson_id']);
         $this->comment->create($request->all());
 
-        return redirect(route('learning.lesson.show', $lesson));
+        return redirect(route('learning.lesson.show', $lesson->slug));
 	}
 	
 }

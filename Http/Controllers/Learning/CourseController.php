@@ -24,10 +24,10 @@ class CourseController extends Controller {
 
 	public function show($id)
 	{
-		$course = $this->course->with(['modules'])->find($id);
+		$course = $this->course->with(['modules'])->findBySlugOrIdOrFail($id);
 		$modules = $course->modules;
 		$courses = $this->course->all();
-		$sharer = \Share::load(route('learning.course.show', $course->id), trans('course::show.messages.sharer', ['name'=>$course->name]))->services('facebook', 'gplus', 'twitter');
+		$sharer = \Share::load(route('learning.course.show', $course->slug), trans('course::show.messages.sharer', ['name'=>$course->name]))->services('facebook', 'gplus', 'twitter');
 
 		return \Theme::view('courses/learning/show', compact('course', 'modules', 'sharer', 'courses'));
 	}

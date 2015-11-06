@@ -2,6 +2,7 @@
 
 
 use App\BaseRepository;
+use Modules\Course\Entities\Lesson;
 
 class LessonRepository extends BaseRepository
 {

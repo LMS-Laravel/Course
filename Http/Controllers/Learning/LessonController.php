@@ -24,9 +24,8 @@ class LessonController extends Controller {
 
 	public function show($id)
 	{
-        $lesson = $this->lesson->find($id);
+        $lesson = $this->lesson->findBySlugOrIdOrFail($id);
         $courses = $this->course->all();
-
 
         if(!$lesson->view)
         {
