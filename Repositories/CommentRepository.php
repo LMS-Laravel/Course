@@ -1,4 +1,6 @@
-<?php namespace Modules\Course\Repositories;
+<?php
+
+namespace modules\Course\Repositories;
 
 use App\BaseRepository;
 use Modules\Course\Entities\Comment;
@@ -6,7 +8,7 @@ use Modules\Course\Entities\Comment;
 class CommentRepository extends BaseRepository
 {
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
@@ -14,6 +16,4 @@ class CommentRepository extends BaseRepository
     {
         return Comment::class;
     }
-
-
 }

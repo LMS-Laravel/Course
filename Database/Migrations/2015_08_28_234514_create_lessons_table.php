@@ -3,17 +3,14 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLessonsTable extends Migration {
-
+class CreateLessonsTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
-        Schema::create('lessons', function(Blueprint $table)
-        {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('title');
@@ -23,7 +20,7 @@ class CreateLessonsTable extends Migration {
             // 1 is video
             $table->boolean('type')->default(1); //type lessons 1 is video, 0 is letter
             $table->integer('module_id')->unsigned();
-            $table->integer('teacher_id')->unsigned();;
+            $table->integer('teacher_id')->unsigned();
             $table->string('slug')->unique();
 
             //foreign key
@@ -37,12 +34,9 @@ class CreateLessonsTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
         Schema::drop('lessons');
     }
-
 }

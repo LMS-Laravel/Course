@@ -3,17 +3,14 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsLessonTable extends Migration {
-
+class CreateCommentsLessonTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
-        Schema::create('comments_lesson', function(Blueprint $table)
-        {
+        Schema::create('comments_lesson', function (Blueprint $table) {
             $table->increments('id');
 
             $table->text('comment');
@@ -30,12 +27,9 @@ class CreateCommentsLessonTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
         Schema::drop('comments_lesson');
     }
-
 }

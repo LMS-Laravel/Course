@@ -1,19 +1,20 @@
-<?php namespace Modules\Course\Entities;
-   
+<?php
+
+namespace modules\Course\Entities;
+
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
-
-class Module extends Model implements SluggableInterface{
-
+class Module extends Model implements SluggableInterface
+{
     use SluggableTrait;
 
     protected $fillable = [];
 
     protected $sluggable = [
         'build_from' => 'name',
-        'save_to'    => 'slug',
+        'save_to' => 'slug',
     ];
 
     public function lessons()
