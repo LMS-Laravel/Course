@@ -1,86 +1,95 @@
-<?php
-
-namespace modules\Course\Providers;
+<?php namespace Modules\Course\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class CourseServiceProvider extends ServiceProvider
-{
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
+class CourseServiceProvider extends ServiceProvider {
 
-    /**
-     * Boot the application events.
-     */
-    public function boot()
-    {
-        $this->registerConfig();
-        $this->registerTranslations();
-        $this->registerViews();
-    }
+	/**
+	 * Indicates if loading of the provider is deferred.
+	 *
+	 * @var bool
+	 */
+	protected $defer = false;
 
-    /**
-     * Register the service provider.
-     */
-    public function register()
-    {
-        //
-    }
+	/**
+	 * Boot the application events.
+	 * 
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->registerConfig();
+		$this->registerTranslations();
+		$this->registerViews();
+	}
 
-    /**
-     * Register config.
-     */
-    protected function registerConfig()
-    {
-        $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('course.php'),
-        ]);
-        $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'course'
-        );
-    }
+	/**
+	 * Register the service provider.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{		
+		//
+	}
 
-    /**
-     * Register views.
-     */
-    public function registerViews()
-    {
-        $viewPath = base_path('resources/views/modules/course');
+	/**
+	 * Register config.
+	 * 
+	 * @return void
+	 */
+	protected function registerConfig()
+	{
+		$this->publishes([
+		    __DIR__.'/../Config/config.php' => config_path('course.php'),
+		]);
+		$this->mergeConfigFrom(
+		    __DIR__.'/../Config/config.php', 'course'
+		);
+	}
 
-        $sourcePath = __DIR__.'/../Resources/views';
+	/**
+	 * Register views.
+	 * 
+	 * @return void
+	 */
+	public function registerViews()
+	{
+		$viewPath = base_path('resources/views/modules/course');
 
-        $this->publishes([
-            $sourcePath => $viewPath,
-        ]);
+		$sourcePath = __DIR__.'/../Resources/views';
 
-        $this->loadViewsFrom([$viewPath, $sourcePath], 'course');
-    }
+		$this->publishes([
+			$sourcePath => $viewPath
+		]);
 
-    /**
-     * Register translations.
-     */
-    public function registerTranslations()
-    {
-        $langPath = base_path('resources/lang/modules/course');
+		$this->loadViewsFrom([$viewPath, $sourcePath], 'course');
+	}
 
-        if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'course');
-        } else {
-            $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'course');
-        }
-    }
+	/**
+	 * Register translations.
+	 * 
+	 * @return void
+	 */
+	public function registerTranslations()
+	{
+		$langPath = base_path('resources/lang/modules/course');
 
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array();
-    }
+		if (is_dir($langPath)) {
+			$this->loadTranslationsFrom($langPath, 'course');
+		} else {
+			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'course');
+		}
+	}
+
+	/**
+	 * Get the services provided by the provider.
+	 *
+	 * @return array
+	 */
+	public function provides()
+	{
+		return array();
+	}
+
 }

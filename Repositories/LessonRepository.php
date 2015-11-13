@@ -1,6 +1,5 @@
-<?php
+<?php namespace Modules\Course\Repositories;
 
-namespace modules\Course\Repositories;
 
 use App\BaseRepository;
 use Modules\Course\Entities\Lesson;
@@ -8,7 +7,7 @@ use Modules\Course\Entities\Lesson;
 class LessonRepository extends BaseRepository
 {
     /**
-     * Specify Model class name.
+     * Specify Model class name
      *
      * @return string
      */
@@ -16,4 +15,5 @@ class LessonRepository extends BaseRepository
     {
         return Lesson::class;
     }
+
 }

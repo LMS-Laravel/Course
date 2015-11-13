@@ -1,13 +1,11 @@
-<?php
-
-namespace modules\Course\Http\Controllers\Learning;
+<?php namespace Modules\Course\Http\Controllers\Learning;
 
 use Modules\Course\Http\Requests\Learning\CommentRequest;
 use Modules\Course\Repositories\CommentRepository;
 use Pingpong\Modules\Routing\Controller;
 
-class CommentController extends Controller
-{
+class CommentController extends Controller {
+
     /**
      * @var CommentRepository
      */
@@ -19,10 +17,11 @@ class CommentController extends Controller
     }
 
     public function store(CommentRequest $request)
-    {
+	{
         $lesson = $request->only(['lesson_id']);
         $this->comment->create($request->all());
 
         return redirect(route('learning.lesson.show', $lesson->slug));
-    }
+	}
+	
 }

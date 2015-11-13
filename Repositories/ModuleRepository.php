@@ -1,13 +1,12 @@
-<?php
+<?php namespace Modules\Course\Repositories;
 
-namespace modules\Course\Repositories;
 
 use App\BaseRepository;
 
 class ModuleRepository extends BaseRepository
 {
     /**
-     * Specify Model class name.
+     * Specify Model class name
      *
      * @return string
      */
@@ -15,4 +14,5 @@ class ModuleRepository extends BaseRepository
     {
         return Module::class;
     }
+
 }

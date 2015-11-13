@@ -2,12 +2,12 @@
 
 return [
     'messages' => [
-                    'welcome' => 'Bienvenido a ',
-                    'description' => 'Catalogo de cursos',
+                    'welcome'       => 'Bienvenido a ',
+                    'description'   => 'Catalogo de cursos'
     ],
 
-    'btn' => [
-                    'module' => 'Modulos',
-                    'favorite' => 'Favorito',
+    'btn'      =>[
+                    'module'        => 'Modulos',
+                    'favorite'      => 'Favorito',
     ],
 ];
