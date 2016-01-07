@@ -9,7 +9,7 @@ use Modules\Course\Entities\Lesson;
 use Modules\Course\Entities\Module;
 
 
-class CourseDatabaseSeeder extends Seeder {
+class CourseTableSeeder extends Seeder {
 
 
 	/**
