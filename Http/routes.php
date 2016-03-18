@@ -8,7 +8,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Modules\Course\Http\Controlle
 
 });
 
-Route::group(['prefix' => 'learning', 'namespace' => 'Modules\Course\Http\Controllers\learning', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'learning', 'namespace' => 'Modules\Course\Http\Controllers\Learning', 'middleware' => 'auth'], function(){
 
     Route::resource('course', 'CourseController',
         ['only' => ['index', 'show']]
